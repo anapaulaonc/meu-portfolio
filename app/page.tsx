@@ -1,103 +1,353 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import {
+  ArrowRight,
+  Download,
+
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Palette,
+  Smartphone,
+  Users,
+} from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import Logo from "../components/ui/Logo.png"
+import Imagefirst from "../public/image1.jpeg"
+import Imagescnd from "../public/image2.jpeg"
+import Imagesrd from "../public/image3.jpeg"
+import Imagesfour from "../public/image4.jpeg"
+import Imagesfifth from "../public/image5.jpeg"
+import me from "../public/anapaula.jpeg"
+
+export default function Portfolio() {
+  
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container max-w-7xl px-6 md:px-8 flex h-16 items-center justify-between">
+          <div className="flex items-center space-x-2">
+            {/* Logo space - replace with your actual logo */}
+            <div className="w-32 h-8 bg-gradient-to-r  rounded flex items-center justify-center">
+              {/* Replace with your logo png */}
+              <Image src={Logo} alt="Logo" width={78} height={16} className="object-contain" />
+              
+            </div>
+          </div>
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <Link href="#home" className="transition-colors hover:text-foreground/80">
+              Home
+            </Link>
+            <Link href="#about" className="transition-colors hover:text-foreground/80">
+              About
+            </Link>
+            <Link href="#projects" className="transition-colors hover:text-foreground/80">
+              Projects
+            </Link>
+            <Link href="#contact" className="transition-colors hover:text-foreground/80">
+              Contact
+            </Link>
+          </nav>
+          <a href="/resume.pdf" download>
+            <Button size="sm">
+              <Download className="h-4 w-4 mr-2" />
+              Resume
+            </Button>
+          </a>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="py-24 md:py-32">
+        <div className="container max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <Badge variant="outline" className="w-fit border-pink-200 text-pink-600 bg-pink-50">
+                  UI/UX Designer
+                </Badge>
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                  Hi, I'm
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
+                    {" "}
+                    Ana Paula Nóbrega 
+                  </span>
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-[600px]">
+                  I'm passionate about creating intuitive interfaces and memorable digital experiences for web and
+                  mobile applications.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="w-fit bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                >
+                  View Projects
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="lg" className="w-fit">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Get in Touch
+                </Button>
+              </div>
+              <div className="flex items-center space-x-4 pt-4">
+              <a href="https://github.com/anapaulaonc" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon">
+                  <Github className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/ana-paula-n%C3%B3brega/" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon">
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+              </a>
+
+              <a href="mailto:anapaulaoncosta@gmail.com">
+                <Button variant="ghost" size="icon">
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </a>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-pink-500/20 via-rose-400/20 to-purple-500/20 p-8">
+                <Image
+                  src={me}
+                  alt="Ana Paula Oliveira da Nóbrega Costa"
+                  width={400}
+                  height={400}
+                  className="rounded-xl object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 md:py-32 bg-muted/50">
+        <div className="container max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="space-y-4">
+              <Badge variant="outline">About Me</Badge>
+              <h2 className="text-3xl font-bold tracking-tighter">Bringing ideas to digital life</h2>
+              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                I enjoy working on digital design projects and have experience creating interfaces that focus on user
+                experience. My approach combines user research, design thinking, and current UI/UX trends to deliver
+                solutions that make a difference.
+              </p>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                I'm always eager to learn new techniques and collaborate with teams to create meaningful digital
+                experiences. Whether it's a mobile app, web interface, or brand identity, I love the process of turning
+                concepts into reality.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
+              <div className="space-y-2">
+                <div className="flex items-center justify-center space-x-2">
+                  <Users className="h-5 w-5 text-pink-500" />
+                  <span className="font-semibold text-2xl">5+</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Projects Completed</p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-center space-x-2">
+                  <Smartphone className="h-5 w-5 text-pink-500" />
+                  <span className="font-semibold text-2xl">6+</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Apps Designed</p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-center space-x-2">
+                  <Palette className="h-5 w-5 text-pink-500" />
+                  <span className="font-semibold text-2xl">2+</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Years Experience</p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-center space-x-2">
+                  <Mail className="h-5 w-5 text-pink-500" />
+                  <span className="font-semibold text-2xl">5+</span>
+                </div>
+                <p className="text-sm text-muted-foreground">Happy Clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 md:py-32">
+        <div className="container max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="space-y-12">
+            <div className="text-center space-y-4">
+              <Badge variant="outline">My Projects</Badge>
+              <h2 className="text-3xl font-bold tracking-tighter">Featured Work</h2>
+              <p className="text-muted-foreground max-w-[600px] mx-auto">A selection of my design projects.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Project 1 */}
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-lg border bg-card shadow">
+                  <div className="relative aspect-square">
+                    <Image
+                      
+                      src={Imagesfifth}
+                      alt="Project 1"
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Financial System</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Financial system UI design for a banking app with a focus on user experience
+                  </p>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-lg border bg-card shadow">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={Imagesfour}
+                      alt="Project 2"
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Tasks Organizer</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Task management app design with a focus on productivity and user engagement
+                  </p>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-lg border bg-card shadow">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={Imagescnd}
+                      alt="Project 3"
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Gym App</h3>
+                  <p className="text-sm text-muted-foreground">Gym AI app </p>
+                </div>
+              </div>
+
+              {/* Project 4 */}
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-lg border bg-card shadow">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={Imagesrd}
+                      alt="Project 4"
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">Forms App</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Creating and managing forms with a user-friendly minimalist interface
+                  </p>
+                </div>
+              </div>
+
+              {/* Project 5 */}
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-lg border bg-card shadow">
+                  <div className="relative aspect-square">
+                    <Image
+                      src={Imagefirst}
+                      alt="Project 5"
+                      fill
+                      className="object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">University schedule app</h3>
+                  <p className="text-sm text-muted-foreground">
+                    App design for managing university schedules, classes, and assignments
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-24 md:py-32 bg-muted/50">
+        <div className="container max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <div className="space-y-4">
+              <Badge variant="outline">Contact</Badge>
+              <h2 className="text-3xl font-bold tracking-tighter">Let's work together</h2>
+              <p className="text-muted-foreground">
+                I'm always open to new projects and opportunities. Get in touch to discuss how we can bring your ideas
+                to life.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-pink-500" />
+                <span>anapaulaoncosta@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="h-5 w-5 text-pink-500" />
+                <span>Brasilia, Brazil</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-8">
+        <div className="container max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-2">
+              <span className="font-semibold">Ana Paula Oliveira da Nóbrega Costa</span>
+            </div>
+            <p className="text-sm text-muted-foreground">© 2024 All rights reserved.</p>
+            <div className="flex items-center space-x-4">
+              <Button variant="ghost" size="icon">
+                <Github className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon">
+                <Linkedin className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon">
+                <Mail className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
