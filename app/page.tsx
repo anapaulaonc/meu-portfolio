@@ -2,32 +2,11 @@
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-
-import {
-  ArrowRight,
-  Download,
-
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  Palette,
-  Smartphone,
-  Users,
-} from "lucide-react"
+import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Palette, Smartphone, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import Logo from "../components/ui/Logo.png"
-import Imagefirst from "../public/image1.jpeg"
-import Imagescnd from "../public/image2.jpeg"
-import Imagesrd from "../public/image3.jpeg"
-import Imagesfour from "../public/image4.jpeg"
-import Imagesfifth from "../public/image5.jpeg"
-import me from "../public/anapaula.jpeg"
 
 export default function Portfolio() {
-  
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -35,10 +14,9 @@ export default function Portfolio() {
         <div className="container max-w-7xl px-6 md:px-8 flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
             {/* Logo space - replace with your actual logo */}
-            <div className="w-32 h-8 bg-gradient-to-r  rounded flex items-center justify-center">
+            <div className="w-32 h-8 rounded flex items-center justify-center">
               {/* Replace with your logo png */}
-              <Image src={Logo} alt="Logo" width={78} height={16} className="object-contain" />
-              
+              <Image src="/Logo.png" alt="Logo" width={78} height={16} className="object-contain" />
             </div>
           </div>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
@@ -61,7 +39,6 @@ export default function Portfolio() {
               Resume
             </Button>
           </a>
-
         </div>
       </header>
 
@@ -75,53 +52,56 @@ export default function Portfolio() {
                   UI/UX Designer
                 </Badge>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  Hi, I'm
+                  Hi, {"I'm"}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
                     {" "}
-                    Ana Paula Nóbrega 
+                    Ana Paula Nóbrega
                   </span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-[600px]">
-                  I'm passionate about creating intuitive interfaces and memorable digital experiences for web and
+                  {"I'm"} passionate about creating intuitive interfaces and memorable digital experiences for web and
                   mobile applications.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="w-fit bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
-                >
-                  View Projects
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="lg" className="w-fit">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Get in Touch
-                </Button>
+                <Link href="#projects">
+                  <Button
+                    size="lg"
+                    className="w-fit bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700"
+                  >
+                    View Projects
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="#contact">
+                  <Button variant="outline" size="lg" className="w-fit">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Get in Touch
+                  </Button>
+                </Link>
               </div>
               <div className="flex items-center space-x-4 pt-4">
-              <a href="https://github.com/anapaulaonc" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon">
-                  <Github className="h-5 w-5" />
-                </Button>
-              </a>
-              <a href="https://www.linkedin.com/in/ana-paula-n%C3%B3brega/" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="icon">
-                  <Linkedin className="h-5 w-5" />
-                </Button>
-              </a>
-
-              <a href="mailto:anapaulaoncosta@gmail.com">
-                <Button variant="ghost" size="icon">
-                  <Mail className="h-5 w-5" />
-                </Button>
-              </a>
+                <a href="https://github.com/anapaulaonc" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon">
+                    <Github className="h-5 w-5" />
+                  </Button>
+                </a>
+                <a href="https://www.linkedin.com/in/ana-paula-n%C3%B3brega/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon">
+                    <Linkedin className="h-5 w-5" />
+                  </Button>
+                </a>
+                <a href="mailto:anapaulaoncosta@gmail.com">
+                  <Button variant="ghost" size="icon">
+                    <Mail className="h-5 w-5" />
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-to-br from-pink-500/20 via-rose-400/20 to-purple-500/20 p-8">
                 <Image
-                  src={me}
+                  src="/anapaula.jpeg"
                   alt="Ana Paula Oliveira da Nóbrega Costa"
                   width={400}
                   height={400}
@@ -146,9 +126,9 @@ export default function Portfolio() {
                 solutions that make a difference.
               </p>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                I'm always eager to learn new techniques and collaborate with teams to create meaningful digital
-                experiences. Whether it's a mobile app, web interface, or brand identity, I love the process of turning
-                concepts into reality.
+                {"I'm"} always eager to learn new techniques and collaborate with teams to create meaningful digital
+                experiences. Whether {"it's"} a mobile app, web interface, or brand identity, I love the process of
+                turning concepts into reality.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
@@ -200,9 +180,8 @@ export default function Portfolio() {
                 <div className="overflow-hidden rounded-lg border bg-card shadow">
                   <div className="relative aspect-square">
                     <Image
-                      
-                      src={Imagesfifth}
-                      alt="Project 1"
+                      src="/image5.jpeg"
+                      alt="Financial System Project"
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-105"
                     />
@@ -221,8 +200,8 @@ export default function Portfolio() {
                 <div className="overflow-hidden rounded-lg border bg-card shadow">
                   <div className="relative aspect-square">
                     <Image
-                      src={Imagesfour}
-                      alt="Project 2"
+                      src="/image4.jpeg"
+                      alt="Tasks Organizer Project"
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-105"
                     />
@@ -241,8 +220,8 @@ export default function Portfolio() {
                 <div className="overflow-hidden rounded-lg border bg-card shadow">
                   <div className="relative aspect-square">
                     <Image
-                      src={Imagescnd}
-                      alt="Project 3"
+                      src="/image2.jpeg"
+                      alt="Gym App Project"
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-105"
                     />
@@ -250,7 +229,7 @@ export default function Portfolio() {
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-lg font-semibold">Gym App</h3>
-                  <p className="text-sm text-muted-foreground">Gym AI app </p>
+                  <p className="text-sm text-muted-foreground">Gym AI app design with modern interface</p>
                 </div>
               </div>
 
@@ -259,8 +238,8 @@ export default function Portfolio() {
                 <div className="overflow-hidden rounded-lg border bg-card shadow">
                   <div className="relative aspect-square">
                     <Image
-                      src={Imagesrd}
-                      alt="Project 4"
+                      src="/image3.jpeg"
+                      alt="Forms App Project"
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-105"
                     />
@@ -279,15 +258,15 @@ export default function Portfolio() {
                 <div className="overflow-hidden rounded-lg border bg-card shadow">
                   <div className="relative aspect-square">
                     <Image
-                      src={Imagefirst}
-                      alt="Project 5"
+                      src="/image1.jpeg"
+                      alt="University Schedule App Project"
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg font-semibold">University schedule app</h3>
+                  <h3 className="text-lg font-semibold">University Schedule App</h3>
                   <p className="text-sm text-muted-foreground">
                     App design for managing university schedules, classes, and assignments
                   </p>
@@ -304,10 +283,10 @@ export default function Portfolio() {
           <div className="max-w-2xl mx-auto text-center space-y-6">
             <div className="space-y-4">
               <Badge variant="outline">Contact</Badge>
-              <h2 className="text-3xl font-bold tracking-tighter">Let's work together</h2>
+              <h2 className="text-3xl font-bold tracking-tighter">{"Let's"} work together</h2>
               <p className="text-muted-foreground">
-                I'm always open to new projects and opportunities. Get in touch to discuss how we can bring your ideas
-                to life.
+                {"I'm"} always open to new projects and opportunities. Get in touch to discuss how we can bring your
+                ideas to life.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -332,17 +311,7 @@ export default function Portfolio() {
               <span className="font-semibold">Ana Paula Oliveira da Nóbrega Costa</span>
             </div>
             <p className="text-sm text-muted-foreground">© 2024 All rights reserved.</p>
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="icon">
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Mail className="h-4 w-4" />
-              </Button>
-            </div>
+            <div className="text-sm text-muted-foreground">UI/UX Designer</div>
           </div>
         </div>
       </footer>
