@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Palette, Smartphone, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import Logo from "../components/ui/Logo.png"
 
 export default function Portfolio() {
   return (
@@ -16,7 +17,7 @@ export default function Portfolio() {
             {/* Logo space - replace with your actual logo */}
             <div className="w-32 h-8 rounded flex items-center justify-center">
               {/* Replace with your logo png */}
-              <Image src="/Logo.png" alt="Logo" width={78} height={16} className="object-contain" />
+              <Image src={Logo} alt="Logo" width={78} height={16} className="object-contain" />
             </div>
           </div>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
